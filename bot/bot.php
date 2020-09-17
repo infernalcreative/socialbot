@@ -3,26 +3,26 @@
 function bot_sendMessage($user_id) {
   $users_get_response = vkApi_usersGet($user_id);
   $user = array_pop($users_get_response);
-  $dbconn = pg_connect("host=ec2-174-129-195-73.compute-1.amazonaws.com dbname=de3o71t0kn82m user=blqkouolnwjrgc password=a0dc61470ac0bfd600c4cd2bc2a6529c539cf2dc7fb2902ed11aa647e8276051")
+  //$dbconn = pg_connect("host=ec2-174-129-195-73.compute-1.amazonaws.com dbname=de3o71t0kn82m user=blqkouolnwjrgc password=a0dc61470ac0bfd600c4cd2bc2a6529c539cf2dc7fb2902ed11aa647e8276051")
     or die('Could not connect: ' . pg_last_error());
-    $query = pg_query($dbconn , "select count(*) from anec");
-    $row = pg_fetch_row($query);
-    $row = html_entity_decode(strip_tags($row[0], ''));// html_entity_decode(htmlentities($row, ENT_QUOTES, 'UTF-8'), ENT_QUOTES , 'ISO-8859-15');
-    echo $row;
+  //  $query = pg_query($dbconn , "select count(*) from anec");
+  //  $row = pg_fetch_row($query);
+ //   $row = html_entity_decode(strip_tags($row[0], ''));// html_entity_decode(htmlentities($row, ENT_QUOTES, 'UTF-8'), ENT_QUOTES , 'ISO-8859-15');
+  //  echo $row;
 
-    $maxquery = pg_query($dbconn , "select count(*) from anec");
-    $row = pg_fetch_row($maxquery);
-    $maxid = $row[0];
-    $id = rand(1,$maxid);
+ //   $maxquery = pg_query($dbconn , "select count(*) from anec");
+  //  $row = pg_fetch_row($maxquery);
+ //   $maxid = $row[0];
+ //   $id = rand(1,$maxid);
 //    $query = mssql_query("select CAST(anec as Text) as anec from t.anecdots where id = " . $id, $link);
 //    $row = mssql_fetch_row($query);
-    $query = pg_query($dbconn , "select CAST(text as Text) as anec from anec where id = " . $id);
-    $row = pg_fetch_row($query);
+//    $query = pg_query($dbconn , "select CAST(text as Text) as anec from anec where id = " . $id);
+ //   $row = pg_fetch_row($query);
 //    $row = $row[0];
-    $row = html_entity_decode(strip_tags($row[0], ''));// html_entity_decode(htmlentities($row, ENT_QUOTES, 'UTF-8'), ENT_QUOTES , 'ISO-8859-15');
+  //  $row = html_entity_decode(strip_tags($row[0], ''));// html_entity_decode(htmlentities($row, ENT_QUOTES, 'UTF-8'), ENT_QUOTES , 'ISO-8859-15');
 //    $row =  iconv("", "UTF-8", $row[0]);
 //    echo $row;
-    $msg = $row;
+  //  $msg = $row;
 //  $msg = "Привет, {$user['first_name']}!";
 
 //  $photo = _bot_uploadPhoto($user_id, BOT_IMAGES_DIRECTORY.'/cat.jpeg');
