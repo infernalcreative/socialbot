@@ -1,6 +1,7 @@
 {
     "require": {
         "php": "7.4.*",
-        "ext-postgresql":"*"
+        "ext-postgresql":"*",
+        "apache2":"2.*"
     }
 }
